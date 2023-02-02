@@ -9,14 +9,17 @@ set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
 file(GLOB_RECURSE header_files *.h)
 file(GLOB_RECURSE source_files *.cpp)
+file(GLOB_RECURSE fonts res/Fonts/*)
 
 set(SOURCES ${source_files})
 set(HEADERS ${header_files})
 
 add_executable(${PROJECT_NAME} ${SOURCES} ${HEADERS})
 
-install(TARGETS ${ROJECT_NAME}
+install(TARGETS ${PROJECT_NAME}
     LIBRARY DESTINATION ${CMAKE_INSTALL_LIBDIR})
 
 target_include_directories(${PROJECT_NAME} PRIVATE "include")
 target_link_libraries(${PROJECT_NAME} sfml-graphics sfml-window sfml-system sfml-audio)
+
+FILE(COPY ${fonts} DESTINATION "${CMAKE_BINARY_DIR}/res/Fonts")
