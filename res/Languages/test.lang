@@ -1,0 +1,7 @@
+[greet]
+Hello world!
+[/greet]
+
+[test]
+\[test]
+[\test]
