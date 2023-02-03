@@ -1,11 +1,10 @@
-#ifndef LANGUAGEMANAGER_H
-#define LANGUAGEMANAGER_H
-
+#pragma once
+#include <iostream>
 
 class LanguageManager
 {
+private:
+
 public:
     LanguageManager();
 };
-
-#endif // LANGUAGEMANAGER_H

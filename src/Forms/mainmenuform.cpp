@@ -1,8 +1,5 @@
 #include "Forms/mainmenuform.h"
 
-//REMOVE IT!!!!
-void sexy(){std::cout<<"ASSWECAN!"<<std::endl;}
-
 MainMenuForm::MainMenuForm(sf::RenderWindow *window)
 {
     eventManager = new EventManager(this);
@@ -20,10 +17,8 @@ MainMenuForm::MainMenuForm(sf::RenderWindow *window)
     //REMOVE IT!!!
     Event *ev = new Event();
     Event *ev2 = new Event();
-    ev->setCallback(&MainMenuForm::test, this);
-    ev2->setCallback(&MainMenuForm::sex, this);
-    eventManager->addKeyboardEvent(ev, sf::Keyboard::S);
-    eventManager->addKeyboardEvent(ev2, sf::Keyboard::Enter);
+//    ev->setCallback(&MainMenuForm::test, this);
+//    eventManager->addKeyboardEvent(ev, sf::Keyboard::S);
 
     rect = new sf::RectangleShape();
     rect2 = new sf::RectangleShape();
@@ -42,7 +37,6 @@ MainMenuForm::MainMenuForm(sf::RenderWindow *window)
     spacer = new Spacer();
     label = new Label(100,100,100,100,sf::Color::Red);
     btn = new Button(100,400,100,100,sf::Color::Green);
-    btn->setCallback(sexy);
     GUIPoll.push_back(btn);
     layout->addChild(btn);
     layout->addChild(label);

@@ -9,10 +9,6 @@
 class MainMenuForm : public Form
 {
 private:
-    //REMOVE IT!!!
-    void test(sf::Event){std::cout<<"SEX"<<std::endl;}
-    //REMOVE IT!!!!
-    void sex(sf::Event){std::cout<<"ASSWECAN!"<<std::endl;}
     Spacer *spacer;
     sf::RectangleShape *rect;
     sf::RectangleShape *rect2;
