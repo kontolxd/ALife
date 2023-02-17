@@ -13,9 +13,11 @@ private:
     sf::RectangleShape *rect;
     sf::RectangleShape *rect2;
     sf::RectangleShape *rect3;
-    Label *label;
-    Button *btn;
+
     Layout *layout;
+    Button *newGame_btn;
+    Button *settings_btn;
+    Button *exit_btn;
 
     sf::View WorldView;
     sf::View GUIView;

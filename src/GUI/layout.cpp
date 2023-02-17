@@ -1,8 +1,8 @@
 #include "GUI/layout.h"
 
 Layout::Layout(int x, int y, int w, int h, sf::Color color)
+    : Layout(sf::Vector2f(x, y), sf::Vector2f(w, h), color)
 {
-    Layout(sf::Vector2f(x, y), sf::Vector2f(w, h), color);
 }
 
 Layout::Layout(sf::Vector2f position, sf::Vector2f size, sf::Color color)

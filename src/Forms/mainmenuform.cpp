@@ -20,28 +20,23 @@ MainMenuForm::MainMenuForm(sf::RenderWindow *window)
 //    ev->setCallback(&MainMenuForm::test, this);
 //    eventManager->addKeyboardEvent(ev, sf::Keyboard::S);
 
-    rect = new sf::RectangleShape();
-    rect2 = new sf::RectangleShape();
-    rect3 = new sf::RectangleShape();
-    rect->setPosition(100,100); //player
-    rect->setSize(sf::Vector2f(100,100));
-    rect->setFillColor(sf::Color::Blue);
-    rect2->setPosition(400,400); //object
-    rect2->setSize(sf::Vector2f(100,100));
-    rect2->setFillColor(sf::Color::Red);
-    rect3->setPosition(0,800); //GUI
-    rect3->setSize(sf::Vector2f(800,100));
-    rect3->setFillColor(sf::Color::Green);
+    spacer = new Spacer(sf::Vector2f(50,50), sf::Vector2f(window->getSize().x, window->getSize().y));
+    layout = new Layout(100,100,400,240, sf::Color::Transparent);
+    newGame_btn = new Button(0, 0, 400, 100, sf::Color::Green);
+    settings_btn = new Button(0, 0, 400, 100, sf::Color::Green);
+    exit_btn = new Button(0, 0, 400, 100, sf::Color::Green);
 
-    layout = new Layout(sf::Vector2f(200,200), sf::Vector2f(300,300));
-    spacer = new Spacer();
-    label = new Label(100,100,100,100,sf::Color::Red);
-    btn = new Button(100,400,100,100,sf::Color::Green);
-    GUIPoll.push_back(btn);
-    layout->addChild(btn);
-    layout->addChild(label);
-    btn->setPosition(10,0);
-    label->setPosition(100,100);
+    layout->addChild(newGame_btn);
+    layout->addChild(settings_btn);
+    layout->addChild(exit_btn);
+    GUIPoll.push_back(layout);
+
+    newGame_btn->setPosition(0,0);
+    settings_btn->setPosition(0, 120);
+    exit_btn->setPosition(0, 240);
+
+    spacer->setElem(layout);
+    spacer->moveRight(150);
 }
 
 void MainMenuForm::pollEvents()
@@ -57,13 +52,9 @@ void MainMenuForm::render()
 {
     //REWRITE!!!!!
     window->clear(sf::Color::Black);
-    rect->move(0,0.01f);
-    WorldView.setCenter(rect->getPosition());
-    window->setView(WorldView);
-    window->draw(*rect);
-    window->draw(*rect2);
     window->setView(GUIView);
-    window->draw(*layout);
+    for(auto it : GUIPoll)
+        window->draw(*it);
     window->display();
 }
 
