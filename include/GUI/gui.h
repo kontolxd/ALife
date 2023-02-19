@@ -11,7 +11,8 @@ protected:
     sf::Vector2f size;
     sf::RectangleShape *shell;
     GUI *parrent;
-    bool clickable;
+    bool clickable = false;
+    bool container = false;
 public:
     virtual void draw(sf::RenderTarget& target, sf::RenderStates states) const override;
 
@@ -28,4 +29,5 @@ public:
     sf::Vector2f getGlobalPosition();
 
     bool isClickable();
+    bool isContainer();
 };

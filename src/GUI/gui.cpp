@@ -6,6 +6,11 @@ bool GUI::isClickable()
     return clickable;
 }
 
+bool GUI::isContainer()
+{
+    return container;
+}
+
 void GUI::draw(sf::RenderTarget& target, sf::RenderStates states) const
 {
     target.draw(*shell);

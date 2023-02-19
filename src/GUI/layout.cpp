@@ -7,7 +7,7 @@ Layout::Layout(int x, int y, int w, int h, sf::Color color)
 
 Layout::Layout(sf::Vector2f position, sf::Vector2f size, sf::Color color)
 {
-
+    container = true;
     parrent = nullptr;
     shell = new sf::RectangleShape();
 
@@ -72,4 +72,9 @@ void Layout::draw(sf::RenderTarget& target, sf::RenderStates states) const
     {
         target.draw(*elem, states);
     }
+}
+
+std::list<GUI*> *Layout::getChilds()
+{
+    return &childs;
 }

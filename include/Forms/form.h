@@ -4,6 +4,8 @@
 #include <iostream>
 #include "GUI/gui.h"
 #include "GUI/button.h"
+#include "GUI/layout.h"
+
 class Form
 {
 protected:
@@ -12,6 +14,7 @@ protected:
     std::list<GUI*> GUIPoll;
     sf::RenderWindow *window;
     void mouseGUIInput();
+    void mouseClickElem(Button*);
     virtual void pollEvents() = 0;
     virtual void render() = 0;
 public:
