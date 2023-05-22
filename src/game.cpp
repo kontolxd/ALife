@@ -2,9 +2,10 @@
 
 Game::Game()
 {
+    LanguageManager::load("test");
+    FontManager::load();
     formManager = new FormManager();
     mainWindow = formManager->getMainWindow();
-    LanguageManager::load("test");
 }
 
 void Game::run()

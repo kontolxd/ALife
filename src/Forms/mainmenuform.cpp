@@ -35,6 +35,10 @@ MainMenuForm::MainMenuForm(sf::RenderWindow *window)
     settings_btn->setPosition(0, 120);
     exit_btn->setPosition(0, 240);
 
+    newGame_btn->setTextContent("New Game");
+    settings_btn->setTextContent("Settings");
+    exit_btn->setTextContent("Exit");
+
     spacer->setElem(layout);
     spacer->moveRight(150);
 

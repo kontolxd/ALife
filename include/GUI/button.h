@@ -1,12 +1,14 @@
 #pragma once
 #include <functional>
 #include <iostream>
+#include "ResourceManagers/fontmanager.h"
 #include "GUI/gui.h"
 
 class Button : public GUI
 {
 private:
     sf::Color fillColor;
+    sf::Text *text;
     //sf::RectangleShape *shell;
     std::string textContent;
     std::function<void()> callback;
