@@ -19,5 +19,7 @@ protected:
     virtual void render() = 0;
 public:
     sf::RenderWindow* getWindow();
+    void setWindow(sf::RenderWindow *window);
     virtual void update() = 0;
+    virtual void init(sf::RenderWindow *window) = 0;
 };

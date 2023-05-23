@@ -35,6 +35,7 @@ private:
     void resize(sf::Event);
 public:
     MainMenuForm();
-    void setWindow(sf::RenderWindow *window);
+    MainMenuForm(sf::RenderWindow *window);
     virtual void update() override;
+    virtual void init(sf::RenderWindow *window) override;
 };

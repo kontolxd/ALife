@@ -18,6 +18,8 @@ void FormManager::update()
 void FormManager::addForm(std::string name, Form *form)
 {
     formsMap[name] = form;
+    form->setWindow(mainWindow);
+    form->init(mainWindow);
 }
 
 void FormManager::setForm(std::string name)

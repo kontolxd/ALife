@@ -41,3 +41,8 @@ void Form::mouseGUIInput()
         }
     }
 }
+
+void Form::setWindow(sf::RenderWindow *window)
+{
+    this->window = window;
+}
