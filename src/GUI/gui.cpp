@@ -20,6 +20,11 @@ void GUI::draw(sf::RenderTarget& target, sf::RenderStates states) const
     }
 }
 
+void GUI::sendSubscribedKey(sf::Keyboard::Key key)
+{
+    pressedKey = key;
+}
+
 ///SETTERS///
 void GUI::setGlobalPosition(sf::Vector2f position)
 {

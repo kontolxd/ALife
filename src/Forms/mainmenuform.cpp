@@ -43,6 +43,12 @@ MainMenuForm::MainMenuForm(sf::RenderWindow *window)
     spacer->moveRight(150);
 
     newGame_btn->setCallback(*[](){std::cout<<"TEST!"<<std::endl;});
+
+
+    //ted subscribe to eventmanager; event manager have subscribers
+    ted = new TextEdit(0,0, 400,100);
+    GUIPoll.push_back(ted);
+    eventManager->subscribe(ted);
 }
 
 void MainMenuForm::pollEvents()

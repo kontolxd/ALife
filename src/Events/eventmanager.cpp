@@ -19,6 +19,11 @@ void EventManager::handle(sf::Event &event)
     if(event.type == sf::Event::KeyPressed)
     {
         ev = keyboardEventMap[event.key.code];
+        keyPressed = event.key.code;
+        for(auto it : subscribers)
+        {
+            it->sendSubscribedKey(keyPressed);
+        }
     }
     else
         ev = eventMap[event.type];
@@ -49,4 +54,9 @@ void EventManager::addEvent(sf::Event::EventType type, Event *event)
 void EventManager::addKeyboardEvent(Event *event, sf::Keyboard::Key key)
 {
     keyboardEventMap[key] = event;
+}
+
+void EventManager::subscribe(GUI *subscriber)
+{
+    subscribers.push_back(subscriber);
 }

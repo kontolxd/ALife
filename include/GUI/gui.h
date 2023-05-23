@@ -5,6 +5,7 @@
 class GUI : public sf::Drawable
 {
 protected:
+    sf::Keyboard::Key pressedKey;
     std::unordered_map<std::string, sf::Drawable*> content;
     sf::Vector2f globalPosition;
     sf::Vector2f localPosition;
@@ -14,6 +15,8 @@ protected:
     bool clickable = false;
     bool container = false;
 public:
+    virtual void sendSubscribedKey(sf::Keyboard::Key);
+
     virtual void draw(sf::RenderTarget& target, sf::RenderStates states) const override;
 
     virtual void setGlobalPosition(sf::Vector2f);

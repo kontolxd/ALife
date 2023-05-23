@@ -1,7 +1,7 @@
 #pragma once
 #include "Forms/form.h"
 #include "Events/eventmanager.h"
-#include "GUI/label.h"
+#include "GUI/textedit.h""
 #include "GUI/button.h"
 #include "GUI/spacer.h"
 #include "GUI/layout.h"
@@ -9,6 +9,10 @@
 class MainMenuForm : public Form
 {
 private:
+    //DELETE IT!!!
+    TextEdit *ted;
+    //
+
     Spacer *spacer;
     sf::RectangleShape *rect;
     sf::RectangleShape *rect2;

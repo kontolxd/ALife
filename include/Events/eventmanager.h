@@ -10,15 +10,18 @@ using KeyboardEventMap = std::unordered_map<sf::Keyboard::Key, Event*>;
 class EventManager
 {
 private:
-     EventMap eventMap;
-     KeyboardEventMap keyboardEventMap;
-     Form *parrent;
+    std::list<GUI*> subscribers;
+    sf::Keyboard::Key keyPressed;
+    EventMap eventMap;
+    KeyboardEventMap keyboardEventMap;
+    Form *parrent;
 public:
     EventManager(Form *parrent = nullptr);
     ~EventManager();
     void handle(sf::Event &event);
     void addEvent(sf::Event::EventType, Event*);
     void addKeyboardEvent(Event*, sf::Keyboard::Key);
+    void subscribe(GUI*);
     //void removeEvent(sf::Event::EventType);
     void editEvent();
 };

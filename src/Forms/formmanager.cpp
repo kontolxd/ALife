@@ -5,7 +5,7 @@ FormManager::FormManager()
     width = 1000;
     height = 800;
     title = "ALife";
-    mainWindow = new sf::RenderWindow(sf::VideoMode(width, height), title);
+    mainWindow = new sf::RenderWindow(sf::VideoMode(width, height), title, sf::Style::Titlebar | sf::Style::Close);
     mainMenuForm = new MainMenuForm(mainWindow);
     currentForm = mainMenuForm;
 }
