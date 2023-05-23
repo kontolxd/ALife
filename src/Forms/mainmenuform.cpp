@@ -1,9 +1,8 @@
 #include "Forms/mainmenuform.h"
 
-MainMenuForm::MainMenuForm(sf::RenderWindow *window)
+MainMenuForm::MainMenuForm()
 {
     eventManager = new EventManager(this);
-    this->window = window;
 
     Event *mousePressEvenet = new Event();
     Event *resizeEvent = new Event();
@@ -47,6 +46,11 @@ MainMenuForm::MainMenuForm(sf::RenderWindow *window)
     ted = new TextEdit(0,0, 400,100);
     GUIPoll.push_back(ted);
     eventManager->subscribe(ted);
+}
+
+void MainMenuForm::setWindow(sf::RenderWindow *window)
+{
+    this->window = window;
 }
 
 void MainMenuForm::pollEvents()

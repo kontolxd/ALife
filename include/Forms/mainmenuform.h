@@ -34,6 +34,7 @@ private:
     void mousePressInput(sf::Event);
     void resize(sf::Event);
 public:
-    MainMenuForm(sf::RenderWindow *window);
+    MainMenuForm();
+    void setWindow(sf::RenderWindow *window);
     virtual void update() override;
 };
