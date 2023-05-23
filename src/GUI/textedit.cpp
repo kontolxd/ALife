@@ -17,7 +17,7 @@ TextEdit::TextEdit(sf::Vector2f position, sf::Vector2f size, sf::Color color)
     shell->setFillColor(color);
 
     text->setFillColor(sf::Color::Red);
-    text->setCharacterSize(24);
+    text->setCharacterSize(size.y - (size.y / 3));
     text->setFont(*FontManager::get("FreeMono.otf"));
     text->setPosition(0,0);
 

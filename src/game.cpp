@@ -4,14 +4,19 @@ Game::Game()
 {
     LanguageManager::load("test");
     FontManager::load();
-    formManager = new FormManager();
-    mainWindow = formManager->getMainWindow();
+    mainFormManager = new FormManager();
+    mainWindow = mainFormManager->getMainWindow();
+    mainFormManager->addForm("main", new MainMenuForm());
+    mainFormManager->setForm("main");
+//    consoleFormManager = new FormManager();
+//    consoleWindow = consoleFormManager->getMainWindow();
 }
 
 void Game::run()
 {
     while(mainWindow->isOpen())
     {
-        formManager->update();
+        mainFormManager->update();
+//        consoleFormManager->update();
     }
 }
