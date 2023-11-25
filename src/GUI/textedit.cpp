@@ -22,6 +22,8 @@ TextEdit::TextEdit(sf::Vector2f position, sf::Vector2f size, sf::Color color)
     text->setPosition(0,0);
 
     content["text"] = text;
+
+    canSend = false;
 }
 
 void TextEdit::sendSubscribedKey(sf::Keyboard::Key key)
@@ -29,7 +31,33 @@ void TextEdit::sendSubscribedKey(sf::Keyboard::Key key)
     GUI::sendSubscribedKey(key);
     if(key == 59)
         textEntered.pop_back();
+    else if (key == sf::Keyboard::Enter)
+    {
+        if(canSend)
+        {
+            send(textEntered);
+            textEntered.clear();
+        }
+    }
     else
         textEntered.push_back(key + 'a');
     text->setString(textEntered);
+}
+
+void TextEdit::setSendable(bool c)
+{
+    canSend = c;
+}
+
+void TextEdit::send(std::string text)
+{
+    for(auto it : str_subscribers)
+    {
+        *it = text;
+    }
+}
+
+void TextEdit::strSubscribe(std::string *subscriber)
+{
+    str_subscribers.push_back(subscriber);
 }
