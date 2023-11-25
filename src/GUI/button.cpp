@@ -47,9 +47,10 @@ void Button::setTextContent(std::string content)
                       globalPosition.y + size.y/2 - text->getCharacterSize());
 }
 
-void Button::setCallback(std::function<void()>)
+//potential memory leak
+void Button::setCallback(std::function<void()> *func)
 {
-    //TODO!
+    callback = *func;
 }
 
 void Button::setCallback(void (*callback)())

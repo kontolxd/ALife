@@ -31,7 +31,7 @@ void MainMenuForm::init(sf::RenderWindow *window)
     //    eventManager->addKeyboardEvent(ev, sf::Keyboard::S);
 
     spacer = new Spacer(sf::Vector2f(50,50), sf::Vector2f(window->getSize().x, window->getSize().y));
-    layout = new Layout(100,100,400,240, sf::Color::Transparent);
+    layout = new Layout(100,100,400,340, sf::Color::Transparent);
     newGame_btn = new Button(0, 0, 400, 100, sf::Color::Green);
     settings_btn = new Button(0, 0, 400, 100, sf::Color::Green);
     exit_btn = new Button(0, 0, 400, 100, sf::Color::Green);
@@ -51,8 +51,9 @@ void MainMenuForm::init(sf::RenderWindow *window)
 
     spacer->setElem(layout);
     spacer->moveRight(150);
-
+    int a;
     newGame_btn->setCallback(*[](){std::cout<<"TEST!"<<std::endl;});
+    exit_btn->setCallback(new std::function<void()>([this](){this->window->close();}));
 
     //    ted = new TextEdit(0,0, 400,100);
     //    GUIPoll.push_back(ted);

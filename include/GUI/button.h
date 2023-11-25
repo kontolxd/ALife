@@ -21,7 +21,7 @@ public:
 
     void setFillColor(sf::Color);
     void setTextContent(std::string);
-    void setCallback(std::function<void()>);
+    void setCallback(std::function<void()>*);
     void setCallback(void (*callback)());
     virtual void setGlobalPosition(sf::Vector2f pos) override;
     virtual void setGlobalPosition(int x, int y) override;
