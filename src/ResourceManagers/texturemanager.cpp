@@ -6,8 +6,8 @@ void TextureManager::load(std::string path)
 {
     for(auto it : std::filesystem::directory_iterator(path))
     {
-        textures[it.path().filename()] = new sf::Texture();
-        textures[it.path().filename()]->loadFromFile(it.path());
+        textures[it.path().filename().string()] = new sf::Texture();
+        textures[it.path().filename().string()]->loadFromFile(it.path().string());
     }
 }
 

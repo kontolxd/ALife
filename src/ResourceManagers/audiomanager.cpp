@@ -6,8 +6,8 @@ void AudioManager::load(std::string path)
 {
     for(auto it : std::filesystem::directory_iterator(path))
     {
-        soundBuffers[it.path().filename()] = new sf::SoundBuffer();
-        soundBuffers[it.path().filename()]->loadFromFile(it.path());
+        soundBuffers[it.path().filename().string()] = new sf::SoundBuffer();
+        soundBuffers[it.path().filename().string()]->loadFromFile(it.path().string());
     }
 }
 

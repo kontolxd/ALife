@@ -6,8 +6,8 @@ void FontManager::load(std::string path)
 {
     for(auto it : std::filesystem::directory_iterator(path))
     {
-        fonts[it.path().filename()] = new sf::Font();
-        fonts[it.path().filename()]->loadFromFile(it.path());
+        fonts[it.path().filename().string()] = new sf::Font();
+        fonts[it.path().filename().string()]->loadFromFile(it.path().string());
     }
 }
 

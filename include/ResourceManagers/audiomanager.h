@@ -2,6 +2,7 @@
 #include <SFML/Audio.hpp>
 #include <filesystem>
 #include <iostream>
+#include <string>
 #include <unordered_map>
 
 class AudioManager

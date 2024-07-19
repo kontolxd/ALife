@@ -2,6 +2,7 @@
 #include <SFML/Graphics.hpp>
 #include <filesystem>
 #include <iostream>
+#include <string>
 #include <unordered_map>
 
 class FontManager
