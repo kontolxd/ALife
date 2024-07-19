@@ -1,5 +1,7 @@
 #pragma once
 
+#include <map>
+#include <functional>
 #include "Forms/form.h""
 #include "GUI/layout.h"
 #include "GUI/label.h"
@@ -15,6 +17,9 @@ private:
     std::string pastCommand;
     std::string *command;
     EventManager *eventManager;
+    std::map<std::string, std::function<void()>*> commandsMap;
+    void initCommands();
+    void handleCommand(std::string command);
     virtual void pollEvents() override;
     virtual void render() override;
     ///GUI ELEMS///

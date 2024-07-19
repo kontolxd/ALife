@@ -12,6 +12,8 @@ ConsoleForm::ConsoleForm(sf::RenderWindow *window)
 
 void ConsoleForm::init(sf::RenderWindow *window)
 {
+    initCommands();
+
     eventManager = new EventManager(this);
     this->window = window;
 
@@ -65,6 +67,7 @@ void ConsoleForm::update()
         pastCommands.back()->setTextContent(*command);
         GUIPoll.push_back(pastCommands.back());
         pastCommand = *command;
+        handleCommand(*command);
         offsetY += 30;
     }
     render();
@@ -89,4 +92,17 @@ void ConsoleForm::resize(sf::Event event)
 {
 //    GUIView.setSize(event.size.width, event.size.height);
 //    GUIView.setCenter(sf::Vector2f(event.size.width/2, event.size.height/2));
+}
+
+void ConsoleForm::initCommands()
+{
+    commandsMap["exit"] = new std::function<void()>([this](){this->window->close();});
+}
+
+void ConsoleForm::handleCommand(std::string command)
+{
+    if(commandsMap.find(command) != commandsMap.end())
+    {
+        (*commandsMap[command])();
+    }
 }

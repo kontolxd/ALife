@@ -51,8 +51,8 @@ void MainMenuForm::init(sf::RenderWindow *window)
 
     spacer->setElem(layout);
     spacer->moveRight(150);
-    int a;
-    newGame_btn->setCallback(*[](){std::cout<<"TEST!"<<std::endl;});
+
+    newGame_btn->setCallback([](){std::cout<<"TEST!"<<std::endl;});
     exit_btn->setCallback(new std::function<void()>([this](){this->window->close();}));
 
     //    ted = new TextEdit(0,0, 400,100);
