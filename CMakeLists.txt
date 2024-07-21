@@ -15,7 +15,8 @@ file(GLOB_RECURSE langs res/Languages/*)
 set(SOURCES ${source_files})
 set(HEADERS ${header_files})
 
-add_executable(${PROJECT_NAME} ${SOURCES} ${HEADERS})
+add_executable(${PROJECT_NAME} ${SOURCES} ${HEADERS}
+    src/Managers/ConsoleManager.cpp)
 
 install(TARGETS ${PROJECT_NAME}
     LIBRARY DESTINATION ${CMAKE_INSTALL_LIBDIR})

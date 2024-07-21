@@ -20,6 +20,7 @@ public:
     void update();
     void addForm(std::string name, Form *form);
     void setForm(std::string name);
+    Form* getForm(std::string name);
 
     sf::RenderWindow* getMainWindow();
 };

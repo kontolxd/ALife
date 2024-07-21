@@ -10,6 +10,8 @@
 #include "ResourceManagers/fontmanager.h"
 #include "Events/eventmanager.h"
 
+#include "Managers/ConsoleManager.h"
+
 class Game
 {
 private:
@@ -17,6 +19,7 @@ private:
     //FormManager *consoleFormManager;
     sf::RenderWindow *mainWindow;
     sf::RenderWindow *consoleWindow;
+    ConsoleManager *console;
 public:
     Game();
     void run();

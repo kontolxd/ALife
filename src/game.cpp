@@ -12,6 +12,9 @@ Game::Game()
     mainFormManager->setForm("console");
 //    consoleFormManager = new FormManager();
 //    consoleWindow = consoleFormManager->getMainWindow();
+
+    ConsoleManager::init(static_cast<ConsoleForm*>(mainFormManager->getForm("console")));
+    console = ConsoleManager::get();
 }
 
 void Game::run()

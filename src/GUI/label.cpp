@@ -21,9 +21,15 @@ Label::Label(sf::Vector2f position, sf::Vector2f size, sf::Color color) : color(
 
     content["text"] = textContent;
     textContent->setPosition(position);
+    textContent->setFillColor(sf::Color::Green);
 }
 
 ///SETERS///
+
+void Label::setTextColor(sf::Color color)
+{
+    this->textContent->setFillColor(color);
+}
 
 void Label::setFillColor(sf::Color color)
 {
@@ -36,7 +42,6 @@ void Label::setTextContent(std::string content)
     //textContent = content;
     textContent->setFont(*FontManager::get("FreeMono.otf"));
     textContent->setString(content);
-    textContent->setFillColor(sf::Color::Red);
     textContent->setCharacterSize(24);
     textContent->setPosition(globalPosition.x + (size.x/2 - textContent->getLocalBounds().width/2),
                       globalPosition.y + size.y/2 - textContent->getCharacterSize());

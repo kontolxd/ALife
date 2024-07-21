@@ -76,6 +76,7 @@ void ConsoleForm::update()
 void ConsoleForm::pollEvents()
 {
     sf::Event event;
+
     while(window->pollEvent(event))
     {
         eventManager->handle(event);
@@ -105,4 +106,34 @@ void ConsoleForm::handleCommand(std::string command)
     {
         (*commandsMap[command])();
     }
+}
+
+void ConsoleForm::sendError(std::string message)
+{
+    Label *mes = new Label(0, offsetY, window->getSize().x, 30, sf::Color::Transparent);
+    mes->setTextColor(sf::Color::Red);
+    pastCommands.push_back(mes);
+    pastCommands.back()->setTextContent(message);
+    GUIPoll.push_back(pastCommands.back());
+    offsetY += 30;
+}
+
+void ConsoleForm::sendWarning(std::string message)
+{
+    Label *mes = new Label(0, offsetY, window->getSize().x, 30, sf::Color::Transparent);
+    mes->setTextColor(sf::Color::Yellow);
+    pastCommands.push_back(mes);
+    pastCommands.back()->setTextContent(message);
+    GUIPoll.push_back(pastCommands.back());
+    offsetY += 30;
+}
+
+void ConsoleForm::sendMessage(std::string message)
+{
+    Label *mes = new Label(0, offsetY, window->getSize().x, 30, sf::Color::Transparent);
+    mes->setTextColor(sf::Color::White);
+    pastCommands.push_back(mes);
+    pastCommands.back()->setTextContent(message);
+    GUIPoll.push_back(pastCommands.back());
+    offsetY += 30;
 }

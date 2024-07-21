@@ -32,6 +32,9 @@ private:
 public:
     ConsoleForm();
     ConsoleForm(sf::RenderWindow *window);
+    void sendError(std::string);
+    void sendWarning(std::string);
+    void sendMessage(std::string);
     virtual void update() override;
     virtual void init(sf::RenderWindow *window) override;
 

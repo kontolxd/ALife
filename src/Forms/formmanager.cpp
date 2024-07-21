@@ -27,6 +27,11 @@ void FormManager::setForm(std::string name)
     currentForm = formsMap[name];
 }
 
+Form* FormManager::getForm(std::string name)
+{
+    return formsMap[name];
+}
+
 sf::RenderWindow* FormManager::getMainWindow()
 {
     return mainWindow;
