@@ -65,6 +65,20 @@ void Layout::addChild(GUI *elem)
     update();
 }
 
+void Layout::addChild(GUI *elem, sf::Vector2f position)
+{
+    elem->setGlobalPosition(position);
+    elem->setPosition(position);
+    elem->setParrent(this);
+    childs.push_back(elem);
+    update();
+}
+
+void Layout::removeChild(GUI *elem)
+{
+    childs.remove(elem);
+}
+
 void Layout::draw(sf::RenderTarget& target, sf::RenderStates states) const
 {
     target.draw(*shell);

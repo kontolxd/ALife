@@ -17,7 +17,11 @@ set(HEADERS ${header_files})
 
 add_executable(${PROJECT_NAME} ${SOURCES} ${HEADERS}
     src/Managers/ConsoleManager.cpp
-    include/Forms/settingsform.h)
+    include/Forms/settingsform.h
+    include/GUI/selector.h
+    include/GUI/interfaces/iclickable.h
+    include/GUI/selectorchild.h
+    include/GUI/crutches/clickforselector.h)
 
 install(TARGETS ${PROJECT_NAME}
     LIBRARY DESTINATION ${CMAKE_INSTALL_LIBDIR})

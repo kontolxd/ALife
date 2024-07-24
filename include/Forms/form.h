@@ -5,6 +5,7 @@
 #include "GUI/gui.h"
 #include "GUI/button.h"
 #include "GUI/layout.h"
+#include "GUI/interfaces/iclickable.h"
 
 class Form
 {

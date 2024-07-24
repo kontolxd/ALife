@@ -25,11 +25,18 @@ void SettingsForm::init(sf::RenderWindow *window)
 
     back_btn = new Button(0, 0, 100, 40, sf::Color::Green);
     back_btn->setTextContent("back");
+    back_btn->setPosition(500, 500);
     back_btn->setCallback(new std::function<void()>([this](){
         this->requestForm("main");
     }));
 
+    language_slct = new Selector(0,0, 200, 20, sf::Color::White);
+    language_slct->testInit();
+    language_slct->setWindow(this->window);
+
     layout->addChild(back_btn);
+    layout->addChild(language_slct);
+    language_slct->setParrent(layout);
     GUIPoll.push_back(layout);
 }
 

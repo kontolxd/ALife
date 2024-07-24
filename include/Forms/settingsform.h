@@ -2,11 +2,14 @@
 #include "Forms/form.h"
 #include "Events/eventmanager.h"
 #include "GUI/button.h"
+#include "GUI/selector.h"
+
 class SettingsForm : public Form
 {
 private:
     Layout *layout;
     Button *back_btn;
+    Selector *language_slct;
 
     EventManager *eventManager;
     sf::View GUIView;

@@ -2,9 +2,10 @@
 #include <functional>
 #include <iostream>
 #include "ResourceManagers/fontmanager.h"
+#include "GUI/interfaces/iclickable.h"
 #include "GUI/gui.h"
 
-class Button : public GUI
+class Button : public GUI, public IClickable
 {
 private:
     sf::Color fillColor;
@@ -17,7 +18,7 @@ public:
     Button(int x = 0, int y = 0, int w = 0, int h = 0, sf::Color color = sf::Color::White);
     Button(sf::Vector2f position, sf::Vector2f size, sf::Color = sf::Color::White);
 
-    void clicked();
+    virtual void clicked() override;
 
     void setFillColor(sf::Color);
     void setTextContent(std::string);

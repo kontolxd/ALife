@@ -52,7 +52,7 @@ void MainMenuForm::init(sf::RenderWindow *window)
     spacer->setElem(layout);
     spacer->moveRight(150);
 
-    newGame_btn->setCallback([](){std::cout<<"TEST!"<<std::endl;});
+    //newGame_btn->setCallback([](){std::cout<<"TEST!"<<std::endl;});
     settings_btn->setCallback(new std::function<void()>([this](){
                     this->requestForm("settings");
     }));

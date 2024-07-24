@@ -19,6 +19,8 @@ public:
     virtual void setSize(int w, int h) override;
 
     void addChild(GUI*);
+    void addChild(GUI*, sf::Vector2f position);
+    void removeChild(GUI*);
     virtual void draw(sf::RenderTarget& target, sf::RenderStates states) const override;
 
     std::list<GUI*> *getChilds();

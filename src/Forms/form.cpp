@@ -35,14 +35,14 @@ void Form::mouseGUIInput()
                         size = innerElem->getSize();
                         if(click.x > pos.x && click.x < pos.x+size.x && click.y > pos.y && click.y < pos.y+size.y)
                         {
-                            dynamic_cast<Button*>(innerElem)->clicked();
+                            dynamic_cast<IClickable*>(innerElem)->clicked();
                         }
                     }
                 }
             }
             if(elem->isClickable())
             {
-                dynamic_cast<Button*>(elem)->clicked();
+                dynamic_cast<IClickable*>(elem)->clicked();
             }
         }
     }
