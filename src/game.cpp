@@ -10,6 +10,8 @@ Game::Game()
     mainFormManager->setForm("main");
     mainFormManager->addForm("console", new ConsoleForm());
     mainFormManager->setForm("console");
+    mainFormManager->addForm("settings", new SettingsForm());
+    mainFormManager->setForm("settings");
 //    consoleFormManager = new FormManager();
 //    consoleWindow = consoleFormManager->getMainWindow();
 
@@ -21,6 +23,12 @@ void Game::run()
 {
     while(mainWindow->isOpen())
     {
+        Form *currentForm = mainFormManager->getCurrentForm();
+        if(currentForm->checkRequest())
+        {
+            currentForm->completeRequest();
+            mainFormManager->setForm(currentForm->getRequestedName());
+        }
         mainFormManager->update();
 //        consoleFormManager->update();
     }

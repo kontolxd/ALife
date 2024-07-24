@@ -5,6 +5,7 @@
 #include "Forms/formmanager.h"
 #include "Forms/mainmenuform.h"
 #include "Forms/consoleform.h"
+#include "Forms/settingsform.h"
 
 #include "ResourceManagers/languagemanager.h"
 #include "ResourceManagers/fontmanager.h"

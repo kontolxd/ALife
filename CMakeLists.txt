@@ -16,7 +16,8 @@ set(SOURCES ${source_files})
 set(HEADERS ${header_files})
 
 add_executable(${PROJECT_NAME} ${SOURCES} ${HEADERS}
-    src/Managers/ConsoleManager.cpp)
+    src/Managers/ConsoleManager.cpp
+    include/Forms/settingsform.h)
 
 install(TARGETS ${PROJECT_NAME}
     LIBRARY DESTINATION ${CMAKE_INSTALL_LIBDIR})

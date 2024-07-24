@@ -1,5 +1,11 @@
 #include "Forms/form.h"
 
+Form::Form()
+{
+    requestFlag = false;
+    requestedFormName = "";
+}
+
 sf::RenderWindow* Form::getWindow()
 {
     return window;
@@ -45,4 +51,25 @@ void Form::mouseGUIInput()
 void Form::setWindow(sf::RenderWindow *window)
 {
     this->window = window;
+}
+
+bool Form::checkRequest()
+{
+    return requestFlag;
+}
+
+void Form::requestForm(std::string name)
+{
+    requestFlag = true;
+    requestedFormName = name;
+}
+
+void Form::completeRequest()
+{
+    requestFlag = false;
+}
+
+std::string Form::getRequestedName()
+{
+    return requestedFormName;
 }
