@@ -21,6 +21,7 @@ private:
     Layout *layout;
     Button *newGame_btn;
     Button *settings_btn;
+    Button *loadGame_btn;
     Button *exit_btn;
 
     sf::View WorldView;

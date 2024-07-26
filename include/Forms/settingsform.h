@@ -3,6 +3,7 @@
 #include "Events/eventmanager.h"
 #include "GUI/button.h"
 #include "GUI/selector.h"
+#include "GUI/spacer.h"
 
 class SettingsForm : public Form
 {
@@ -11,6 +12,9 @@ private:
     Button *back_btn;
     Selector *language_slct;
     Selector *resolution_slct;
+
+    sf::Text *languageSelect_text;
+    sf::Text *resolution_text;
 
     EventManager *eventManager;
     sf::View GUIView;

@@ -12,6 +12,7 @@ Game::Game()
     mainFormManager->setForm("console");
     mainFormManager->addForm("settings", new SettingsForm());
     mainFormManager->setForm("settings");
+    mainFormManager->setForm("main");
 //    consoleFormManager = new FormManager();
 //    consoleWindow = consoleFormManager->getMainWindow();
 

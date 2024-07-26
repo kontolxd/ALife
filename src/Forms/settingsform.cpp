@@ -25,17 +25,25 @@ void SettingsForm::init(sf::RenderWindow *window)
 
     back_btn = new Button(0, 0, 100, 40, sf::Color::Green);
     back_btn->setTextContent("back");
-    back_btn->setPosition(500, 500);
+    back_btn->setPosition((1280 / 2) - back_btn->getSize().x/2, 620);
     back_btn->setCallback(new std::function<void()>([this](){
         this->requestForm("main");
     }));
 
     language_slct = new Selector(0,0, 200, 20, sf::Color::White);
-    language_slct->testInit();
     language_slct->setWindow(this->window);
+    language_slct->setPosition((1280 / 2) - language_slct->getSize().x/2, 100);
+
+    languageSelect_text = new sf::Text;
+    languageSelect_text->setFont(*FontManager::get("FreeMono.otf"));
+    languageSelect_text->setString("Language: ");
+    languageSelect_text->setFillColor(sf::Color::Red);
+    languageSelect_text->setCharacterSize(20);
+    languageSelect_text->setPosition((1280 / 2) - language_slct->getSize().x - languageSelect_text->getCharacterSize(), 95);
 
     resolution_slct = new Selector(0,0,200,20, sf::Color::White);
     resolution_slct->setWindow(this->window);
+    resolution_slct->setPosition((1280 / 2) - language_slct->getSize().x/2, 150);
 
     layout->addChild(back_btn);
     layout->addChild(language_slct);
@@ -43,8 +51,10 @@ void SettingsForm::init(sf::RenderWindow *window)
     language_slct->setParrent(layout);
     GUIPoll.push_back(layout);
 
-    resolution_slct->setPosition(200,200);
+    //1280, 720
+
     initResolution();
+    language_slct->testInit();
 }
 
 void SettingsForm::pollEvents()
@@ -61,6 +71,7 @@ void SettingsForm::render()
     //REWRITE!!!!!
     window->clear(sf::Color::Black);
     //window->setView(GUIView);
+    window->draw(*languageSelect_text);
     for(auto it : GUIPoll)
         window->draw(*it);
     window->display();
