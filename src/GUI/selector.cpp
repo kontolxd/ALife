@@ -43,7 +43,7 @@ void Selector::addChild(std::string text)
 {
     SelectorChild *child = new SelectorChild(
         globalPosition.x,
-        (globalPosition.y + size.y) * (variants.size()+1),
+        globalPosition.y + (size.y * (variants.size()+1)),
         size.x,
         size.y);
     child->setText(text);
@@ -98,4 +98,15 @@ void Selector::setParrent(Layout *parrent)
 void Selector::setWindow(sf::RenderWindow *window)
 {
     this->window = window;
+}
+
+void Selector::setPosition(int x, int y)
+{
+    setPosition(sf::Vector2f(x, y));
+}
+
+void Selector::setPosition(sf::Vector2f pos)
+{
+    GUI::setPosition(pos);
+    dynamic_cast<sf::Text*>(content["currentVariant"])->setPosition(globalPosition);
 }

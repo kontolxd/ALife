@@ -41,6 +41,7 @@ void GUI::setPosition(sf::Vector2f position)
 {
     this->localPosition = position;
     shell->setPosition(globalPosition + localPosition);
+    setGlobalPosition(globalPosition + localPosition);
 }
 
 void GUI::setPosition(int x, int y)

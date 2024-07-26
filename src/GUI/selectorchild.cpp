@@ -67,3 +67,13 @@ void SelectorChild::setWindow(sf::RenderWindow *window)
 {
     this->window = window;
 }
+
+void SelectorChild::setPosition(int x, int y)
+{
+    GUI::setPosition(sf::Vector2f(x, y));
+}
+
+void SelectorChild::setPosition(sf::Vector2f pos)
+{
+    GUI::setPosition(pos);
+}

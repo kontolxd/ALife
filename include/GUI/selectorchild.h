@@ -26,4 +26,7 @@ public:
     void setID(int n);
     void setWindow(sf::RenderWindow *window);
     std::string getString();
+
+    virtual void setPosition(int x, int y) override;
+    virtual void setPosition(sf::Vector2f position) override;
 };

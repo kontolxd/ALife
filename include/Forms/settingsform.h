@@ -10,11 +10,13 @@ private:
     Layout *layout;
     Button *back_btn;
     Selector *language_slct;
+    Selector *resolution_slct;
 
     EventManager *eventManager;
     sf::View GUIView;
     void mousePressInput(sf::Event event);
     void resize(sf::Event event);
+    void initResolution();
     virtual void pollEvents() override;
     virtual void render() override;
 public:

@@ -16,7 +16,6 @@ private:
     sf::Color fillColor;
     sf::Text *currentVariant;
     std::vector<SelectorChild*> variants;
-    void select(int num);
     int charSize;
     int defSizeY;
     bool isOpened;
@@ -31,6 +30,9 @@ public:
     void addChild(std::string text);
     void setParrent(Layout*);
     void setWindow(sf::RenderWindow *window);
+    void select(int num);
 
     virtual void clicked() override;
+    virtual void setPosition(int x, int y) override;
+    virtual void setPosition(sf::Vector2f position) override;
 };
